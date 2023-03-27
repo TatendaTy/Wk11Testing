@@ -1,47 +1,32 @@
 import unittest
 from roman_to_int import roman_to_int
 
-class TestRomanToInt(unittest.TestCase):
-    def test_roman_to_int(self):
-        # Test valid input
-        self.assertEqual(roman_to_int.roman_to_int('I'), 1)
-        self.assertEqual(roman_to_int.roman_to_int('IV'), 4)
-        self.assertEqual(roman_to_int.roman_to_int('IX'), 9)
-        self.assertEqual(roman_to_int.roman_to_int('XL'), 40)
-        self.assertEqual(roman_to_int.roman_to_int('CD'), 400)
-        self.assertEqual(roman_to_int.roman_to_int('MCMXCIV'), 1994)
-
-        # Test invalid input
-        with self.assertRaises(KeyError):
-            roman_to_int('A')
-        with self.assertRaises(KeyError):
-            roman_to_int('IIII')
-        with self.assertRaises(KeyError):
-            roman_to_int('MMMM')
-        with self.assertRaises(KeyError):
-            roman_to_int('IC')
+class RomanToIntTest(unittest.TestCase):
     
+    def test_basic_numerals(self):
+        self.assertEqual(roman_to_int("I"), 1)
+        self.assertEqual(roman_to_int("V"), 5)
+        self.assertEqual(roman_to_int("X"), 10)
+        self.assertEqual(roman_to_int("L"), 50)
+        self.assertEqual(roman_to_int("C"), 100)
+        self.assertEqual(roman_to_int("D"), 500)
+        self.assertEqual(roman_to_int("M"), 1000)
+        
+    def test_complex_numerals(self):
+        self.assertEqual(roman_to_int("IX"), 9)
+        self.assertEqual(roman_to_int("XXIV"), 24)
+        self.assertEqual(roman_to_int("LXXXIX"), 89)
+        self.assertEqual(roman_to_int("CDXCIV"), 494)
+        self.assertEqual(roman_to_int("CMXCIX"), 999)
+        
+    def test_invalid_input(self):
+        self.assertEqual(roman_to_int("XIIII"), "Invalid Roman numeral!")
+        self.assertEqual(roman_to_int("MMCDLXXXIIX"), "Invalid Roman numeral!")
+        self.assertEqual(roman_to_int("ABC"), "Invalid Roman numeral!")
+
 if __name__ == '__main__':
     unittest.main()
 
-# def test_roman_to_int():
-#     # Test valid input
-#     assert roman_to_int('I') == 1
-#     assert roman_to_int('IV') == 4
-#     assert roman_to_int('IX') == 9
-#     assert roman_to_int('XL') == 40
-#     assert roman_to_int('CD') == 400
-#     assert roman_to_int('MCMXCIV') == 1994
-
-#     # Test invalid input
-#     with pytest.raises(KeyError):
-#         roman_to_int('A')
-#     with pytest.raises(KeyError):
-#         roman_to_int('IIII')
-#     with pytest.raises(KeyError):
-#         roman_to_int('MMMM')
-#     with pytest.raises(KeyError):
-#         roman_to_int('IC')
 # ---------------------------------------------------------------------------
 
 ## REMAINING TESTS
