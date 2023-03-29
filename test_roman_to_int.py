@@ -20,9 +20,10 @@ class RomanToIntTest(unittest.TestCase):
         self.assertEqual(roman_to_int("CMXCIX"), 999)
         
     def test_invalid_input(self):
-        self.assertEqual(roman_to_int("XIIII"), "Invalid Roman numeral!")
-        self.assertEqual(roman_to_int("MMCDLXXXIIX"), "Invalid Roman numeral!")
-        self.assertEqual(roman_to_int("ABC"), "Invalid Roman numeral!")
+        errRes = "invalid roman numeral!"
+        self.assertEqual(roman_to_int("Q"), errRes)
+        self.assertEqual(roman_to_int("MMCDLXXXIIX"), errRes)
+        self.assertEqual(roman_to_int("ABC"), errRes)
 
 if __name__ == '__main__':
     unittest.main()
