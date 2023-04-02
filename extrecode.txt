@@ -28,3 +28,18 @@ class TestRomanToInt(unittest.TestCase):
     #     self.assertEqual(roman_to_int("XIIII"), "Invalid Roman numeral!")
     #     self.assertEqual(roman_to_int("MMCDLXXXIIX"), "Invalid Roman numeral!")
     #     self.assertEqual(roman_to_int("ABC"), "Invalid Roman numeral!")
+
+
+
+
+    # self.assertEqual(roman_to_int("V"), 5)
+        # self.assertEqual(roman_to_int("X"), 10)
+        # self.assertEqual(roman_to_int("L"), 50)
+        # self.assertEqual(roman_to_int("C"), 100)
+        # self.assertEqual(roman_to_int("D"), 500)
+        # self.assertEqual(roman_to_int("M"), 1000)
+
+    # self.assertEqual(roman_to_int("XXIV"), 24)
+        # self.assertEqual(roman_to_int("LXXXIX"), 89)
+        # self.assertEqual(roman_to_int("CDXCIV"), 494)
+        # self.assertEqual(roman_to_int("CMXCIX"), 999)
